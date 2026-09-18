@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <meta name="theme-color" content="#2a4a5a">
+    <meta name="description" content="Lista de presentes Casamento | Kamila & Marcelo - Uma celebração especial para construir nosso lar">
+    <title>Lista de presentes Casamento | Kamila & Marcelo</title>
+    
+    <!-- Google Fonts Elegantes -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            background: #5A1F2B;
+            position: relative;
+        }
+
+        /* ===== FUNDO AZUL ESCURO ELEGANTE ===== */
+        .bg-elegant {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: linear-gradient(145deg, #5A1F2B 0%, #421621 50%, #7A3042 100%);
+        }
+
+        .bg-texture {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.08"><path d="M100 0 L200 100 L100 200 L0 100 Z" fill="none" stroke="%234d7c91" stroke-width="0.8"/><circle cx="100" cy="100" r="45" fill="none" stroke="%234d7c91" stroke-width="0.8"/><path d="M100 30 L170 100 L100 170 L30 100 Z" fill="none" stroke="%234d7c91" stroke-width="0.5"/></svg>');
+            background-repeat: repeat;
+            background-size: 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, rgba(77, 124, 145, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            padding: 32px 24px;
+        }
+
+        /* ===== HERO ===== */
+        .hero-minimal {
+            text-align: center;
+            padding: 48px 20px 40px;
+            border-bottom: 1px solid rgba(77, 124, 145, 0.4);
+            margin-bottom: 32px;
+            position: relative;
+        }
+
+        .hero-minimal::before {
+            content: '✦';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #C58A96;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .hero-minimal h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            font-weight: 500;
+            color: #eef4f7;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-minimal p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            color: #D7A9B2;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero-minimal .separator {
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #C58A96, #D7A9B2, #C58A96, transparent);
+            margin: 24px auto 0;
+        }
+
+        /* ===== CARD PRINCIPAL - FUNDO BRANCO ===== */
+        .main-card {
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            margin-bottom: 32px;
+            border: none;
+        }
+
+        /* ===== INFO NOTE - FUNDO BRANCO ===== */
+        .info-note {
+            margin: 20px 24px;
+            padding: 14px 18px;
+            background: #ffffff;
+            border-left: 3px solid #8F2D3F;
+            font-size: 0.7rem;
+            color: #7A3042;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E9DDE0;
+        }
+
+        .info-note i {
+            color: #8F2D3F;
+            font-size: 0.9rem;
+        }
+
+        /* ===== LISTA DE PRESENTES - FUNDO BRANCO ===== */
+        .gift-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 24px;
+            background: #ffffff;
+        }
+
+        .gift-item {
+            background: #FAF7F5;
+            padding: 18px 20px;
+            border-radius: 16px;
+            transition: all 0.2s;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+            border: 1px solid #E9DDE0;
+        }
+
+        .gift-item:active {
+            transform: scale(0.99);
+        }
+
+        .gift-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .gift-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #5A1F2B;
+            letter-spacing: 0.3px;
+        }
+
+        .gift-status {
+            font-size: 0.65rem;
+            font-weight: 500;
+            padding: 4px 12px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .gift-status.available {
+            background: #E8D6DA;
+            color: #6B3442;
+        }
+
+        .gift-status.reserved {
+            background: #F3E1D4;
+            color: #9B6B4A;
+        }
+
+        .gift-description {
+            font-size: 0.7rem;
+            color: #D7A9B2;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .gift-reserved-by {
+            font-size: 0.65rem;
+            margin-top: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: #F7EEF0;
+            color: #7A3042;
+        }
+
+        .gift-actions {
+            margin-top: 12px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-reserve {
+            background: #8F2D3F;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: white;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-reserve i {
+            color: white;
+            font-size: 0.7rem;
+        }
+
+        .btn-reserve:hover {
+            background: #6E1F2F;
+            transform: translateY(-1px);
+        }
+
+        .btn-cancel {
+            background: #F3E2E6;
+            border: 1px solid #D8B7BF;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #8F2D3F;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-cancel i {
+            font-size: 0.7rem;
+        }
+
+        .btn-cancel:hover {
+            background: #F2D4D9;
+            border-color: #9B6B4A;
+            color: #9B6B4A;
+        }
+
+        /* ===== PIX SECTION ===== */
+        .pix-section {
+            margin: 0 24px 24px;
+            background: linear-gradient(135deg, #8F2D3F, #6E1F2F);
+            border-radius: 24px;
+            padding: 24px;
+            color: white;
+        }
+
+        .pix-section h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pix-section p {
+            font-size: 0.7rem;
+            opacity: 0.85;
+            margin-bottom: 20px;
+        }
+
+        .pix-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 18px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .pix-key {
+            background: #FAF7F5;
+            padding: 14px;
+            border-radius: 12px;
+        }
+
+        .pix-key .key-value {
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: #5A1F2B;
+            letter-spacing: 0.5px;
+            word-break: break-all;
+        }
+
+        .copy-btn {
+            background: #8F2D3F;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 30px;
+            margin-top: 14px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .copy-btn:hover {
+            background: #6E1F2F;
+        }
+
+        /* ===== ADMIN BAR - NO RODAPÉ ===== */
+        .admin-footer {
+            margin: 20px 24px 24px;
+            padding: 16px 20px;
+            background: #FAF7F5;
+            border-radius: 20px;
+            border: 1px solid #E9DDE0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .admin-footer .admin-mode {
+            display: flex;
+            gap: 10px;
+            flex: 1;
+        }
+
+        .admin-footer .admin-mode input {
+            flex: 1;
+            padding: 10px 16px;
+            border: 1px solid #DED1D5;
+            border-radius: 48px;
+            font-size: 0.8rem;
+            font-family: 'Montserrat', sans-serif;
+            background: #ffffff;
+            color: #5A1F2B;
+        }
+
+        .admin-footer .admin-mode input:focus {
+            outline: none;
+            border-color: #8F2D3F;
+        }
+
+        .admin-footer .admin-mode button {
+            background: #8F2D3F;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 48px;
+            color: white;
+            font-weight: 500;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .admin-footer .admin-mode button:hover {
+            background: #6E1F2F;
+        }
+
+        .admin-footer .admin-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .admin-footer .refresh-btn {
+            background: #F7EEF0;
+            color: #7A3042;
+            border: 1px solid #DED1D5;
+            padding: 8px 14px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+
+        .admin-footer .refresh-btn:hover {
+            background: #EADDE0;
+            color: #8F2D3F;
+        }
+
+        .admin-footer .admin-status {
+            font-size: 0.7rem;
+            padding: 5px 12px;
+            border-radius: 48px;
+            background: #F7EEF0;
+            color: #7A3042;
+            border: 1px solid #DED1D5;
+        }
+
+        .admin-footer .admin-status.active {
+            background: #8F2D3F;
+            color: white;
+            border: none;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer-elegant {
+            text-align: center;
+            padding: 24px;
+            font-size: 0.65rem;
+            color: #C58A96;
+            border-top: 1px solid rgba(77, 124, 145, 0.25);
+            margin-top: 16px;
+        }
+
+
+        /* ===== PIX FLUTUANTE ===== */
+        .pix-float-button {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 62px;
+            height: 62px;
+            border-radius: 50%;
+            background: #8F2D3F;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 2000;
+            border: 3px solid rgba(255,255,255,0.95);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+            animation: pixPulse 2s infinite;
+            transition: transform 0.25s ease;
+        }
+
+        .pix-float-button:hover {
+            transform: scale(1.08);
+        }
+
+        .pix-float-button:active {
+            transform: scale(0.96);
+        }
+
+        @keyframes pixPulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(143,45,63,0.55), 0 8px 24px rgba(0,0,0,0.25);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(143,45,63,0), 0 8px 24px rgba(0,0,0,0.25);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(143,45,63,0), 0 8px 24px rgba(0,0,0,0.25);
+            }
+        }
+
+        .pix-float-message {
+            position: fixed;
+            right: 96px;
+            bottom: 31px;
+            width: 245px;
+            padding: 14px 17px;
+            background: #fff;
+            color: #5A1F2B;
+            border-radius: 16px;
+            box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+            z-index: 1999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(14px);
+            transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+            cursor: pointer;
+            border: 1px solid #E9DDE0;
+        }
+
+        .pix-float-message.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+
+        .pix-float-message::after {
+            content: "";
+            position: absolute;
+            right: -9px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-width: 8px 0 8px 9px;
+            border-style: solid;
+            border-color: transparent transparent transparent #fff;
+        }
+
+        .pix-float-message strong {
+            display: block;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .pix-float-message span {
+            display: block;
+            font-size: 0.68rem;
+            line-height: 1.45;
+            color: #7A3042;
+        }
+
+        /* ===== MODAL DO PIX ===== */
+        .pix-help-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.68);
+            backdrop-filter: blur(7px);
+            justify-content: center;
+            align-items: center;
+            z-index: 10001;
+            padding: 20px;
+        }
+
+        .pix-help-modal.active {
+            display: flex;
+        }
+
+        .pix-help-content {
+            position: relative;
+            width: 100%;
+            max-width: 390px;
+            background: #fff;
+            border-radius: 28px;
+            padding: 30px 24px 24px;
+            text-align: center;
+            border: 1px solid #E9DDE0;
+            box-shadow: 0 20px 55px rgba(0,0,0,0.25);
+            animation: pixModalIn 0.3s ease;
+        }
+
+        @keyframes pixModalIn {
+            from {
+                opacity: 0;
+                transform: translateY(18px) scale(0.96);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .pix-help-close {
+            position: absolute;
+            top: 12px;
+            right: 14px;
+            width: 34px;
+            height: 34px;
+            border: none;
+            border-radius: 50%;
+            background: #F7EEF0;
+            color: #8F2D3F;
+            font-size: 21px;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        .pix-help-icon {
+            width: 58px;
+            height: 58px;
+            margin: 0 auto 10px;
+            border-radius: 50%;
+            background: #8F2D3F;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+        }
+
+        .pix-help-content h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.65rem;
+            font-weight: 600;
+            color: #5A1F2B;
+            margin-bottom: 7px;
+        }
+
+        .pix-help-content > p {
+            font-size: 0.72rem;
+            line-height: 1.55;
+            color: #7A3042;
+            margin-bottom: 18px;
+        }
+
+        .pix-qr-wrapper {
+            width: 190px;
+            height: 190px;
+            padding: 8px;
+            margin: 0 auto 16px;
+            background: #fff;
+            border: 1px solid #E9DDE0;
+            border-radius: 16px;
+        }
+
+        .pix-qr-wrapper img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .pix-help-key {
+            background: #FAF7F5;
+            border: 1px solid #E9DDE0;
+            border-radius: 12px;
+            padding: 11px 13px;
+            font-family: monospace;
+            font-size: 0.78rem;
+            color: #5A1F2B;
+            word-break: break-all;
+            margin-bottom: 11px;
+        }
+
+        .pix-help-copy {
+            width: 100%;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 18px;
+            background: #8F2D3F;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .pix-help-copy:hover {
+            background: #6E1F2F;
+        }
+
+        .pix-help-copy.copied {
+            background: #557A67;
+        }
+
+        @media (max-width: 480px) {
+            .pix-float-button {
+                right: 15px;
+                bottom: 15px;
+                width: 56px;
+                height: 56px;
+                font-size: 21px;
+            }
+
+            .pix-float-message {
+                right: 80px;
+                bottom: 23px;
+                width: 210px;
+            }
+
+            .pix-help-content {
+                max-width: 350px;
+                padding: 28px 18px 20px;
+            }
+
+            .pix-qr-wrapper {
+                width: 170px;
+                height: 170px;
+            }
+        }
+
+        /* ===== MODAIS ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 32px;
+            border-radius: 32px;
+            max-width: 90%;
+            width: 100%;
+            text-align: center;
+            animation: fadeInUp 0.25s ease;
+            border: 1px solid #E9DDE0;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-content h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #5A1F2B;
+            margin-bottom: 12px;
+        }
+
+        .modal-content input {
+            width: 100%;
+            padding: 14px 18px;
+            margin: 20px 0;
+            border: 1px solid #DED1D5;
+            border-radius: 48px;
+            font-size: 0.85rem;
+            font-family: 'Montserrat', sans-serif;
+            background: #ffffff;
+            color: #5A1F2B;
+        }
+
+        .modal-content input:focus {
+            outline: none;
+            border-color: #8F2D3F;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .modal-buttons button {
+            flex: 1;
+            padding: 12px;
+            border-radius: 48px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.8rem;
+            font-family: 'Montserrat', sans-serif;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .modal-buttons button:active {
+            transform: scale(0.98);
+        }
+
+        .btn-confirm {
+            background: #8F2D3F;
+            color: white;
+        }
+
+        .btn-cancel {
+            background: #F3E2E6;
+            color: #8F2D3F;
+            border: 1px solid #D8B7BF;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 48px;
+            color: #D7A9B2;
+            font-size: 0.8rem;
+        }
+
+        /* Indicador de atualização automática */
+        .auto-refresh-indicator {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(8px);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 30px;
+            font-size: 0.6rem;
+            font-family: 'Montserrat', sans-serif;
+            z-index: 999;
+            pointer-events: none;
+        }
+
+        @media (min-width: 768px) {
+            .container { max-width: 680px; margin: 0 auto; }
+            .hero-minimal h1 { font-size: 3.8rem; }
+            .gift-header { flex-wrap: nowrap; }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 20px 16px; }
+            .admin-footer { flex-direction: column; }
+            .admin-footer .admin-mode { flex-direction: column; width: 100%; }
+            .admin-footer .admin-mode button { width: 100%; }
+            .admin-footer .admin-actions { width: 100%; justify-content: space-between; }
+            .gift-actions { flex-direction: column; }
+            .btn-reserve, .btn-cancel { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-elegant"></div>
+    <div class="bg-texture"></div>
+    <div class="bg-overlay"></div>
+
+
+    <!-- ===== PIX FLUTUANTE ===== -->
+    <div class="pix-float-message" id="pixFloatMessage" onclick="abrirPixFlutuante()">
+        <strong>💚 Quer nos ajudar?</strong>
+        <span>Um PIX também pode fazer parte desse momento tão especial.</span>
+    </div>
+
+    <button class="pix-float-button" id="pixFloatButton" onclick="abrirPixFlutuante()" aria-label="Ajudar através de PIX" title="Ajudar através de PIX">
+        <i class="fa-brands fa-pix"></i>
+    </button>
+
+    <div class="pix-help-modal" id="pixHelpModal" onclick="fecharPixSeClicarFora(event)">
+        <div class="pix-help-content">
+            <button class="pix-help-close" onclick="fecharPixFlutuante()" aria-label="Fechar">×</button>
+
+            <div class="pix-help-icon">
+                <i class="fa-brands fa-pix"></i>
+            </div>
+
+            <h3>Um presente especial 💚</h3>
+
+            <p>
+                Se você quiser nos presentear de uma forma diferente,
+                pode contribuir através de um PIX.
+                <br>
+                Toda ajuda será recebida com muito carinho!
+            </p>
+<div class="pix-help-key">
+                <strong>CPF:</strong>
+                <span id="pixFloatKey">102.599.279-29</span>
+            </div>
+            <div class="pix-help-key">
+                <strong>Nome:</strong>
+                <span>Kamila Vitoria Pereira</span>
+            </div>
+
+            <button class="pix-help-copy" id="pixFloatCopy" onclick="copiarPixFlutuante()">
+                <i class="far fa-copy"></i> copiar chave PIX
+            </button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="hero-minimal">
+            <h1>Lista de Presentes Casamento</h1>
+            <p>Kamila & Marcelo</p>
+            <div class="separator"></div>
+        </div>
+
+        <div class="main-card">
+            <div class="info-note">
+                <i class="far fa-clock"></i>
+                <span>reservas em tempo real · atualizações automáticas a cada 10 segundos</span>
+            </div>
+
+            <div id="giftListContainer">
+                <div class="loading"><i class="fas fa-spinner fa-pulse"></i> carregando presentes...</div>
+            </div>
+
+            <div class="pix-section">
+                <h3><i class="fas fa-credit-card"></i> contribuição</h3>
+                <p>se preferir, contribua com qualquer valor via pix</p>
+                <div class="pix-card">
+                    <div class="pix-key">
+                        <div class="key-value" id="pixKeyValue">102.599.279-29</div>
+                        <button class="copy-btn" onclick="copyPixKey()"><i class="far fa-copy"></i> copiar chave</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ADMIN BAR - AGORA NO RODAPÉ DO CARD -->
+            <div class="admin-footer">
+                <div class="admin-mode">
+                    <input type="password" id="adminPassword" placeholder="acesso restrito">
+                    <button onclick="loginAdmin()">entrar</button>
+                </div>
+                <div class="admin-actions">
+                    <button class="refresh-btn" onclick="carregarDados()"><i class="fas fa-sync-alt"></i> atualizar</button>
+                    <div id="adminStatus" class="admin-status"><i class="far fa-user"></i> convidado</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-elegant">
+            <span>com carinho, para construir nosso novo lar</span>
+        </div>
+    </div>
+
+    <!-- Indicador de atualização automática -->
+    <div class="auto-refresh-indicator" id="autoRefreshIndicator">
+        <i class="fas fa-sync-alt fa-fw"></i> <span id="refreshTimer">10</span>s
+    </div>
+
+    <div id="reserveModal" class="modal">
+        <div class="modal-content">
+            <h3>reservar presente</h3>
+            <p><strong id="modalGiftName"></strong></p>
+            <input type="text" id="reserveName" placeholder="seu nome">
+            <div class="modal-buttons">
+                <button class="btn-confirm" onclick="confirmReserve()">confirmar</button>
+                <button class="btn-cancel" onclick="closeModal()">cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="cancelModal" class="modal">
+        <div class="modal-content">
+            <h3>cancelar reserva</h3>
+            <p>cancelar <strong id="cancelGiftName"></strong>?</p>
+            <div class="modal-buttons">
+                <button class="btn-confirm" onclick="confirmCancel()">sim</button>
+                <button class="btn-cancel" onclick="closeCancelModal()">voltar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = "https://script.google.com/macros/s/AKfycbxPF4aq2q7KeNtGvDBXlMJW3v-GXK5RqLPP3itYZAvLNfQnrsoLpqPvAW134kphuNI/exec";
+        const OWNER_PASSWORD = "9648";
+        const PIX_KEY = "102.599.279-29";
+
+        // ===== PIX FLUTUANTE =====
+
+        const pixFloatKeyElement = document.getElementById('pixFloatKey');
+        if (pixFloatKeyElement) pixFloatKeyElement.textContent = PIX_KEY;
+
+        function abrirPixFlutuante() {
+            const message = document.getElementById('pixFloatMessage');
+            const modal = document.getElementById('pixHelpModal');
+
+            if (message) message.classList.remove('show');
+            if (modal) modal.classList.add('active');
+        }
+
+        function fecharPixFlutuante() {
+            const modal = document.getElementById('pixHelpModal');
+            if (modal) modal.classList.remove('active');
+        }
+
+        function fecharPixSeClicarFora(event) {
+            if (event.target === document.getElementById('pixHelpModal')) {
+                fecharPixFlutuante();
+            }
+        }
+
+        async function copiarPixFlutuante() {
+    const button = document.querySelector(".pix-help-copy");
+    const textoOriginal = button ? button.innerHTML : "";
+
+    const mostrarCopiado = () => {
+      if (!button) return;
+      button.innerHTML = '<i class="fa-solid fa-check"></i> CPF copiado!';
+      button.classList.add("copied");
+
+      setTimeout(() => {
+        button.innerHTML = textoOriginal;
+        button.classList.remove("copied");
+      }, 2200);
+    };
+
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(PIX_KEY)
+        .then(mostrarCopiado)
+        .catch(() => copiarPixFallback(mostrarCopiado));
+    } else {
+      copiarPixFallback(mostrarCopiado);
+    }
+  }
+
+  function copiarPixFallback(callback) {
+    const campo = document.createElement("textarea");
+    campo.value = PIX_KEY;
+    campo.style.position = "fixed";
+    campo.style.opacity = "0";
+    document.body.appendChild(campo);
+    campo.focus();
+    campo.select();
+
+    try {
+      document.execCommand("copy");
+      callback();
+    } catch (e) {
+      alert("Não foi possível copiar o CPF. Selecione e copie manualmente.");
+    }
+
+    document.body.removeChild(campo);
+  }
+
+        // A mensagem aparece alguns segundos depois que a página carrega.
+        setTimeout(() => {
+            const message = document.getElementById('pixFloatMessage');
+            if (message) {
+                message.classList.add('show');
+
+                setTimeout(() => {
+                    message.classList.remove('show');
+                }, 7000);
+            }
+        }, 3500);
+
+        // ESC fecha o modal.
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') fecharPixFlutuante();
+        });
+
+        
+        let gifts = [];
+        let currentGiftId = null;
+        let isAdmin = false;
+        let autoRefreshInterval = null;
+        let timerSeconds = 10;
+
+        function normalizarDadosAPI(dados) {
+            // O novo Apps Script retorna uma lista de objetos.
+            if (Array.isArray(dados) && dados.length && typeof dados[0] === 'object' && !Array.isArray(dados[0])) {
+                return dados.map(item => ({
+                    id: parseInt(item.id),
+                    name: item.name || '',
+                    description: item.description || '--',
+                    status: item.status || 'available',
+                    reservedBy: item.reservedBy || null
+                })).filter(item => !Number.isNaN(item.id));
+            }
+
+            // Compatibilidade com o formato antigo: cabeçalho + linhas.
+            if (Array.isArray(dados)) {
+                return dados.slice(1).filter(linha => linha && linha[0]).map(linha => ({
+                    id: parseInt(linha[0]),
+                    name: linha[1] || '',
+                    description: linha[2] || '--',
+                    status: linha[3] || 'available',
+                    reservedBy: linha[4] || null
+                })).filter(item => !Number.isNaN(item.id));
+            }
+
+            return [];
+        }
+
+        async function atualizacaoSilenciosa() {
+            try {
+                const controller = new AbortController();
+                const timeout = setTimeout(() => controller.abort(), 5000);
+
+                const response = await fetch(API_URL + "?t=" + Date.now(), {
+                    method: "GET",
+                    cache: "no-store",
+                    signal: controller.signal
+                });
+
+                clearTimeout(timeout);
+
+                if (!response.ok) throw new Error("Falha ao consultar o banco.");
+
+                const dados = normalizarDadosAPI(await response.json());
+
+                if (!Array.isArray(dados)) throw new Error("Resposta inválida do Apps Script.");
+
+                const listaAnterior = JSON.stringify(gifts);
+                gifts = dados.map(item => ({
+                    id: Number(item.id),
+                    name: item.name || "Presente",
+                    description: item.description || "--",
+                    status: item.status || "available",
+                    reservedBy: item.reservedBy || null
+                }));
+
+                if (JSON.stringify(gifts) !== listaAnterior) {
+                    renderGifts();
+
+                    const indicator = document.getElementById("autoRefreshIndicator");
+                    if (indicator) {
+                        indicator.style.background = "rgba(196, 166, 122, 0.9)";
+                        setTimeout(() => {
+                            indicator.style.background = "rgba(0,0,0,0.6)";
+                        }, 500);
+                    }
+                }
+
+            } catch (error) {
+                console.error("Erro na atualização automática:", error);
+            }
+        }
+
+        function iniciarTimer() {
+            if (autoRefreshInterval) clearInterval(autoRefreshInterval);
+            
+            let segundos = 10;
+            const timerElement = document.getElementById('refreshTimer');
+            
+            autoRefreshInterval = setInterval(async () => {
+                segundos--;
+                if (timerElement) timerElement.textContent = segundos;
+                
+                if (segundos <= 0) {
+                    await atualizacaoSilenciosa();
+                    segundos = 10;
+                    if (timerElement) timerElement.textContent = segundos;
+                }
+            }, 1000);
+        }
+
+        async function carregarDados() {
+            const container = document.getElementById("giftListContainer");
+
+            if (container) {
+                container.innerHTML = '<div class="loading">carregando presentes...</div>';
+            }
+
+            try {
+                const controller = new AbortController();
+                const timeout = setTimeout(() => controller.abort(), 8000);
+
+                const response = await fetch(API_URL + "?t=" + Date.now(), {
+                    method: "GET",
+                    cache: "no-store",
+                    signal: controller.signal
+                });
+
+                clearTimeout(timeout);
+
+                if (!response.ok) {
+                    throw new Error("Falha ao carregar o Google Apps Script.");
+                }
+
+                const dados = normalizarDadosAPI(await response.json());
+
+                if (!Array.isArray(dados)) {
+                    throw new Error("Resposta inválida do Google Apps Script.");
+                }
+
+                gifts = dados.map(item => ({
+                    id: Number(item.id),
+                    name: item.name || "Presente",
+                    description: item.description || "--",
+                    status: item.status || "available",
+                    reservedBy: item.reservedBy || null
+                }));
+
+                renderGifts();
+
+            } catch (error) {
+                console.error("Erro ao carregar presentes:", error);
+
+                if (container) {
+                    container.innerHTML = `
+                        <div class="loading">
+                            não foi possível carregar a lista de presentes.<br>
+                            <button onclick="carregarDados()" style="margin-top:12px;">
+                                tentar novamente
+                            </button>
+                        </div>
+                    `;
+                }
+            }
+
+            if (autoRefreshInterval) clearInterval(autoRefreshInterval);
+            iniciarTimer();
+        }
+
+        async function salvarReserva(id, acao, nome) {
+            try {
+                // Usa GET para evitar o bloqueio de CORS/redirect que pode ocorrer
+                // quando um HTML local faz POST para um Web App do Google Apps Script.
+                const params = new URLSearchParams();
+                params.set('action', acao === 'reservar' ? 'reserve' : 'cancel');
+                params.set('id', id);
+                if (nome) params.set('reservedBy', nome);
+
+                const response = await fetch(API_URL + '?' + params.toString() + '&t=' + Date.now(), {
+                    method: 'GET',
+                    cache: 'no-store'
+                });
+
+                if (!response.ok) throw new Error('Falha ao salvar no Google Sheets.');
+                const result = await response.json();
+                return result.success === true;
+            } catch (error) {
+                console.error('Erro ao salvar reserva:', error);
+                return false;
+            }
+        }
+        
+        function renderGifts() {
+            const container = document.getElementById('giftListContainer');
+            if (!gifts.length) { container.innerHTML = '<div class="loading">nenhum presente encontrado</div>'; return; }
+            const giftList = document.createElement('div'); giftList.className = 'gift-list';
+            gifts.forEach(gift => {
+                const statusClass = gift.status === 'available' ? 'available' : 'reserved';
+                const statusText = gift.status === 'available' ? 'disponível' : 'reservado';
+                const buttonHtml = gift.status === 'available' 
+                    ? `<button class="btn-reserve" onclick="openReserveModal(${gift.id})"><i class="fas fa-gift"></i> reservar</button>`
+                    : `<button class="btn-cancel" onclick="openCancelModal(${gift.id})"><i class="fas fa-times"></i> cancelar</button>`;
+                
+                let reservedHtml = '';
+                if (gift.status !== 'available') {
+                    if (isAdmin && gift.reservedBy) reservedHtml = `<div class="gift-reserved-by"><i class="fas fa-user"></i> ${gift.reservedBy}</div>`;
+                    else if (gift.reservedBy) reservedHtml = `<div class="gift-reserved-by"><i class="fas fa-lock"></i> reservado</div>`;
+                }
+                
+                const giftItem = document.createElement('div'); giftItem.className = 'gift-item';
+                giftItem.innerHTML = `
+                    <div class="gift-header">
+                        <span class="gift-name">${gift.name}</span>
+                        <span class="gift-status ${statusClass}">${statusText}</span>
+                    </div>
+                    ${gift.description && gift.description !== "--" ? `<div class="gift-description"><i class="fas fa-tag"></i> ${gift.description}</div>` : ''}
+                    ${reservedHtml}
+                    <div class="gift-actions">${buttonHtml}</div>
+                `;
+                giftList.appendChild(giftItem);
+            });
+            container.innerHTML = ''; container.appendChild(giftList);
+        }
+        
+        function loginAdmin() {
+            const password = document.getElementById('adminPassword').value;
+            if (password === OWNER_PASSWORD) { 
+                isAdmin = true; 
+                document.getElementById('adminStatus').className = 'admin-status active'; 
+                document.getElementById('adminStatus').innerHTML = '<i class="fas fa-crown"></i> proprietário'; 
+                renderGifts(); 
+                alert('acesso concedido. agora você visualiza os nomes das reservas.');
+            } else { 
+                alert('acesso negado.'); 
+            }
+            document.getElementById('adminPassword').value = '';
+        }
+        
+        function openReserveModal(id) {
+            const gift = gifts.find(g => g.id === id);
+            if (gift && gift.status === 'available') { 
+                currentGiftId = id; 
+                document.getElementById('modalGiftName').textContent = gift.name; 
+                document.getElementById('reserveName').value = ''; 
+                document.getElementById('reserveModal').style.display = 'flex'; 
+            } else { 
+                alert('este presente não está disponível.'); 
+            }
+        }
+        
+        async function confirmReserve() {
+            const name = document.getElementById('reserveName').value.trim();
+            if (!name) { alert('por favor, informe seu nome.'); return; }
+            const btn = document.querySelector('#reserveModal .btn-confirm');
+            const originalText = btn.innerHTML; btn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i>'; btn.disabled = true;
+            try {
+                const ok = await salvarReserva(currentGiftId, 'reservar', name);
+                if (ok) { await carregarDados(); alert(`✓ reserva confirmada. obrigado, ${name}!`); closeModal(); }
+                else { alert('❌ erro ao reservar. tente novamente.'); }
+            } catch(e) { alert('❌ erro ao reservar.'); }
+            finally { btn.innerHTML = originalText; btn.disabled = false; }
+        }
+        
+        function openCancelModal(id) {
+            const gift = gifts.find(g => g.id === id);
+            if (gift && gift.status === 'reserved') { 
+                currentGiftId = id; 
+                document.getElementById('cancelGiftName').textContent = gift.name; 
+                document.getElementById('cancelModal').style.display = 'flex'; 
+            } else { 
+                alert('este presente não está reservado.'); 
+            }
+        }
+        
+        async function confirmCancel() {
+            const btn = document.querySelector('#cancelModal .btn-confirm');
+            const originalText = btn.innerHTML; btn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i>'; btn.disabled = true;
+            try {
+                const ok = await salvarReserva(currentGiftId, 'cancelar', null);
+                if (ok) { await carregarDados(); alert('✓ reserva cancelada.'); closeCancelModal(); }
+                else { alert('❌ erro ao cancelar.'); }
+            } catch(e) { alert('❌ erro ao cancelar.'); }
+            finally { btn.innerHTML = originalText; btn.disabled = false; }
+        }
+        
+        function closeModal() { document.getElementById('reserveModal').style.display = 'none'; document.getElementById('reserveName').value = ''; }
+        function closeCancelModal() { document.getElementById('cancelModal').style.display = 'none'; }
+        function copyPixKey() { navigator.clipboard.writeText(PIX_KEY); alert('✓ chave pix copiada!'); }
+        
+        document.getElementById('pixKeyValue').textContent = PIX_KEY;
+        window.onclick = function(event) { if (event.target === document.getElementById('reserveModal')) closeModal(); if (event.target === document.getElementById('cancelModal')) closeCancelModal(); }
+        
+        carregarDados();
+        iniciarTimer();
+    </script>
+</body>
+</html>
